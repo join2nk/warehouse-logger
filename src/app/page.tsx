@@ -1,14 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { prisma } from "@/lib/server/db";
-export default async function Home() {
-  const data = await prisma.user.findMany();
-  return (
-    <div>
-      {data.map((user) => (
-        <div key={user.id}>{user.email}</div>
-      ))}
+import Landing from "@/components/LandingPage/Landing";
 
-      <Button>hello</Button>
-    </div>
+export default async function Home() {
+  return (
+    <>
+      <Landing />
+    </>
   );
 }
